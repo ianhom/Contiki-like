@@ -45,7 +45,8 @@ struct process hello_world_process =
 /* AUTOSTART_PROCESSES(&hello_world_process); */
 struct process * const autostart_processes[] = 
 {
-    &hello_world_process 
+    &hello_world_process,
+    NULL;
 };
 
 /* PROCESS_THREAD(hello_world_process, ev, data) */
