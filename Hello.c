@@ -66,9 +66,9 @@ static char process_thread_hello_world_process(struct pt *process_pt, process_ev
                 printf("Hello World!\n");
             
     /* PROCESS_BEGIN(); */
-        }
+        };
         PT_YIELD_FLAG  = 0;
-        process_pt->lc = 0;
+        process_pt->lc = 0;;
         return PT_ENDED;
     };
 }
