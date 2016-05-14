@@ -1,3 +1,6 @@
+#ifndef __TEMP_HEAD_H__
+#define __TEMP_HEAD_H__
+
 #define ORIGINAL_CODE 1
 
 #define PROCESS(name, strname)				\
@@ -31,3 +34,5 @@ struct process * const autostart_processes[] = {__VA_ARGS__, NULL}
 #define PT_INIT(pt)   LC_INIT((pt)->lc)
 
 #define LC_INIT(s) s = 0;
+
+#endif
