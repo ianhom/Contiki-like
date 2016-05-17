@@ -31,7 +31,7 @@ PROCESS_THREAD(hello_world_process, ev, data)           /* Procss body          
 /********************************************************************************/
 /* Let's translate: */
 /* PROCESS(hello_world_process, "Hello world process"); */
-static char process_thread_hello_world_process(struct pt *process_pt, process_event_t ev, process_data_t data);
+static char process_thread_hello_world_process(struct pt *process_pt, process_event_t ev, process_data_t data); /* Function declaration */
 struct process hello_world_process = 
 {
     NULL,
@@ -40,30 +40,30 @@ struct process hello_world_process =
     {0},
     0,
     0
-};
+};                                                     /* Data structure of process. */
 
 /* AUTOSTART_PROCESSES(&hello_world_process); */
 struct process * const autostart_processes[] = 
 {
     &hello_world_process,
     NULL;
-};
+};                                                     /* Array of auto starting processes */
 
 /* PROCESS_THREAD(hello_world_process, ev, data) */
 static char process_thread_hello_world_process(struct pt *process_pt, process_event_t ev, process_data_t data)
 {
     /* PROCESS_BEGIN(); */
     {
-        char PT_YIELD_FLAG = 1;
+        char PT_YIELD_FLAG = 1;                   /* Set Yield flag first */
         if (PT_YIELD_FLAG)
         {
-            ;
+            ;                                     /* ?? Do something here ?? */
         }
-        switch (process_pt->lc)
+        switch (process_pt->lc)                   /* Check run with which line */
         {
-            case 0:
+            case 0:                               
                 ;
-                printf("Hello World!\n");
+                printf("Hello World!\n");         /* Your works here*/
             
     /* PROCESS_BEGIN(); */
         };
@@ -73,3 +73,5 @@ static char process_thread_hello_world_process(struct pt *process_pt, process_ev
     };
 }
 #endif
+
+/* End of file */
